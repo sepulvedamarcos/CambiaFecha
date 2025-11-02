@@ -10,9 +10,10 @@ Pequeña aplicación escrita en Gambas3 que permite cambiar la fecha y hora del 
 
 Esta aplicación usa un único comando del sistema para actualizar la fecha y hora:
 
-´´´bash
+```bash
 Shell "pkexec date --set '" & fechaHora & "'" Wait
-´´´
+```
+
 Gracias a pkexec, la aplicación puede solicitar permisos de administrador cuando sea necesario, garantizando que el cambio de hora se realice correctamente en sistemas Linux.
 
 🚀 Uso
@@ -31,7 +32,7 @@ El sistema solicitará tu contraseña de administrador.
 
 Puedes compilar la aplicación directamente desde Gambas3 o clonar el repositorio:
 
-``bash
+```bash
 git clone https://github.com/sepulvedamarcos/CambiarFechaHora.git
 cd CambiarFechaHora
 gbr3
