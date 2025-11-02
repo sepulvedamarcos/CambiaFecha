@@ -1,0 +1,97 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,57,42)
+  Resizable = False
+  Arrangement = Arrange.Vertical
+  Spacing = True
+  Margin = True
+  Padding = 8
+  { MenuAplicacion Menu
+    Text = ("Archivo")
+    { MenuSalir Menu
+      Text = ("Salir")
+      Picture = Picture["icon:/medium/close"]
+    }
+  }
+  { MenuAyuda Menu
+    Text = ("Ayuda")
+    { mnuAcercaDe Menu
+      Text = ("Acerca de ") & "..."
+      Picture = Picture["icon:/medium/help"]
+    }
+  }
+  { LabelFecha Label
+    MoveScaled(2,0,47,4)
+    Font = Font["Poppins,+2"]
+    Text = ("Ingresar fecha y hora para el sistema")
+  }
+  { HBox2 Panel
+    MoveScaled(1,5,54,24)
+    Expand = True
+    Arrangement = Arrange.Horizontal
+    Padding = 10
+    { Panel2 Panel
+      MoveScaled(3,3,46,19)
+      Padding = 20
+      { Label1 Label
+        MoveScaled(1,1,8,3)
+        Text = ("Hora")
+      }
+      { SpinBoxHora SpinBox
+        MoveScaled(1,4,11,4)
+        MaxValue = 23
+        Alignment = Align.Right
+      }
+      { SpinBoxMinutos SpinBox
+        MoveScaled(13,4,11,4)
+        MaxValue = 59
+        Alignment = Align.Right
+      }
+      { SpinBoxSegundos SpinBox
+        MoveScaled(25,4,11,4)
+        MaxValue = 60
+        Alignment = Align.Right
+      }
+      { Label2 Label
+        MoveScaled(1,9,8,3)
+        Text = ("Fecha")
+      }
+      { SpinBoxAnio SpinBox
+        MoveScaled(1,12,14,4)
+        MinValue = 2025
+        MaxValue = 2030
+        Value = 2025
+        Alignment = Align.Right
+      }
+      { SpinBoxDia SpinBox
+        MoveScaled(32,12,11,4)
+        MaxValue = 31
+        Alignment = Align.Right
+      }
+      { ComboBoxMes ComboBox
+        MoveScaled(15,12,17,4)
+        ReadOnly = True
+        List = [("Enero"), ("Febrero"), ("Marzo"), ("Abril"), ("Mayo"), ("Junio"), ("Julio"), ("Agosto"), ("Septiembre"), ("Octubre"), ("Noviembre"), ("Diciembre")]
+      }
+    }
+  }
+  { HBox1 HBox
+    MoveScaled(4,30,48,6)
+    Spacing = True
+    { Panel1 Panel
+      MoveScaled(3,1,4,4)
+      Expand = True
+    }
+    { btnOK Button
+      MoveScaled(14,1,16,4)
+      Text = ("OK")
+      Default = True
+    }
+    { btnCancel Button
+      MoveScaled(31,1,16,4)
+      Text = ("Cancel")
+      Cancel = True
+    }
+  }
+}

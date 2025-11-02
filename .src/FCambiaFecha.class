@@ -1,0 +1,42 @@
+' Gambas class file
+
+Public Sub btnOK_Click()
+
+  Dim fechaHora As String
+
+  fechaHora = SpinBoxAnio.Text &
+    "-" & CStr(Format(ComboBoxMes.Index + 1, "0#")) &
+    "-" & CStr(Format(SpinBoxDia.Text, "0#")) &
+    " " & CStr(Format(SpinBoxHora.Text, "0#")) &
+    ":" & CStr(Format(SpinBoxMinutos.Text, "0#")) &
+    ":" & CStr(Format(SpinBoxSegundos.Text, "0#"))
+
+  Print ("Cambiar la fecha y la hora : ") & fechaHora
+
+  Shell "pkexec date --set '" & fechaHora & "'" Wait
+
+  Me.Close(True)
+
+End
+
+Public Sub btnCancel_Click()
+
+  Me.Close
+
+End
+
+Public Sub Form_Open()
+
+  ComboBoxMes.Index = 0
+
+End
+
+Public Sub MenuSalir_Click()
+
+End
+
+Public Sub mnuAcercaDe_Click()
+
+  FAcercaDe.ShowModal()
+
+End
