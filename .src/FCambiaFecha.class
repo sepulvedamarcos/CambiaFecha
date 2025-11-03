@@ -12,10 +12,14 @@ Public Sub btnOK_Click()
     ":" & CStr(Format(SpinBoxSegundos.Text, "0#"))
 
   Print ("Cambiar la fecha y la hora : ") & fechaHora
+  Print "pkexec date --set '" & fechaHora & "'"
 
-  Shell "pkexec date --set '" & fechaHora & "'" Wait
+  TextBoxFecha.Text = "pkexec date --set '" & fechaHora & "'"
+  Wait 0.3
 
-  Me.Close(True)
+  Shell "pkexec date -set '" & fechaHora & "'" Wait
+
+  ' Me.Close(True)
 
 End
 
@@ -28,15 +32,5 @@ End
 Public Sub Form_Open()
 
   ComboBoxMes.Index = 0
-
-End
-
-Public Sub MenuSalir_Click()
-
-End
-
-Public Sub mnuAcercaDe_Click()
-
-  FAcercaDe.ShowModal()
 
 End
